@@ -1,0 +1,9 @@
+<library path="tarm_hwi">
+  <class name="tarm/tarm_hwi"
+         type="tarm::tarm_hwi"
+         base_class_type="hardware_interface::SystemInterface">
+    <description>
+      tarm hardware interface for ros2 control
+    </description>
+  </class>
+</library>

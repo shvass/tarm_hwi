@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <ros2_control name="tarm_hwi" type="system">
+        <hardware>
+          <plugin>tarm/tarm_hwi</plugin>
+        </hardware>
+
+
+        <joint name="world_base_joint">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+        </joint>
+
+        <joint name="base_seg1_joint">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+        </joint>
+
+        <joint name="seg1_seg2_joint">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+        </joint>
+
+        <joint name="seg2_seg3_joint">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+        </joint>
+
+        <joint name="seg3_seg4_joint">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+        </joint>
+
+        <joint name="seg4_seg5_joint">
+          <command_interface name="position"/>
+          <state_interface name="position"/>
+        </joint>
+
+      </ros2_control>
+
+    
+</robot>

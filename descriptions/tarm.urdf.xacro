@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="tarm">
+    
+    <xacro:include filename="$(find tarm)/descriptions/common.xacro"/>
+
+    <xacro:include filename="$(find tarm)/descriptions/body/tarm.xacro"/>
+
+    <xacro:body name="tarm" h1="0.01" l1="0.26" l2="0.24" l3="0.1" l4="0.12" l5="0.1"/>
+
+    <xacro:include filename="control/tarm_hwi.xacro"/>
+
+</robot>    

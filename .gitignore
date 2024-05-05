@@ -1,0 +1,14 @@
+
+# colcon paths
+build/
+log/
+install
+
+
+# other paths
+out/
+
+
+# ide editor configs
+.vscode/
+.vs/
