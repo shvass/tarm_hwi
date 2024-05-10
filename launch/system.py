@@ -50,7 +50,8 @@ def generate_launch_description():
     )
     
     # run control manager with its parameters
-    robot_controller_param = PathJoinSubstitution([tarmShare ,"config", "tarm_controller.yaml"])
+    # robot_controller_param = PathJoinSubstitution([tarmShare ,"config", "tarm_controller.yaml"])
+    robot_controller_param = PathJoinSubstitution([share ,"config", "tarm_controller.yaml"])
 
     cm = Node(
         package="controller_manager",

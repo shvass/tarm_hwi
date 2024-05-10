@@ -84,12 +84,12 @@ std::vector<hardware_interface::CommandInterface> tarm::tarm_hwi::export_command
 
 hardware_interface::CallbackReturn tarm::tarm_hwi::on_activate(const rclcpp_lifecycle::State &previous_state)
 {
-    return hardware_interface::CallbackReturn();
+    return hardware_interface::CallbackReturn::SUCCESS;
 }
 
 hardware_interface::CallbackReturn tarm::tarm_hwi::on_deactivate(const rclcpp_lifecycle::State &previous_state)
 {
-    return hardware_interface::CallbackReturn();
+    return hardware_interface::CallbackReturn::SUCCESS;
 }
 
 hardware_interface::return_type tarm::tarm_hwi::read(const rclcpp::Time &time, const rclcpp::Duration &period)
@@ -107,7 +107,7 @@ hardware_interface::return_type tarm::tarm_hwi::write(const rclcpp::Time &time, 
 
     auto& arr = message.angular_velocity_covariance;
 
-    for(int i = 0; i < 5; i++) joint_position_[i] = arr[i] = joint_position_command_[i];
+    for(int i = 0; i <=5; i++) joint_position_[i] = arr[i] = joint_position_command_[i];
 
     publisher_.get()->publish(message);
 
