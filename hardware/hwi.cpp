@@ -113,14 +113,14 @@ hardware_interface::return_type tarm::tarm_hwi::write(const rclcpp::Time &time, 
 
     rclcpp::Logger log = rclcpp::get_logger("tarm_hw");    
     
-    RCLCPP_INFO(log, "got commands %f %f %f %f %f %f", 
-        joint_position_command_[0],
-        joint_position_command_[1],
-        joint_position_command_[2],
-        joint_position_command_[3],
-        joint_position_command_[4],
-        joint_position_command_[5]
-    );
+    // RCLCPP_INFO(log, "got commands %f %f %f %f %f %f", 
+    //     joint_position_command_[0],
+    //     joint_position_command_[1],
+    //     joint_position_command_[2],
+    //     joint_position_command_[3],
+    //     joint_position_command_[4],
+    //     joint_position_command_[5]
+    // );
 
 
     // RCLCPP_INFO(log, "write called");

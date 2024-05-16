@@ -30,7 +30,7 @@ def generate_launch_description():
         parameters=[{
             'robot_description': ParameterValue(Command(['xacro ', urdfPath]), value_type=str)
     }]
-    )
+    ) 
     
     # start joint state broadcaster controller
     joint_state_broad = Node(
@@ -63,11 +63,27 @@ def generate_launch_description():
         ],
     )
     
+    cam_param = PathJoinSubstitution([share ,"config", "cam.yaml"])
+    cam_node = Node(package="v4l2_camera",
+                executable="v4l2_camera_node",
+                name="camera_driver",
+                namespace="camera_drv",
+                remappings=[
+                    ("image_raw/compressed", "compressed"),                    
+                ],
+                arguments=[
+                        "--ros-args",
+                        "--params-file",
+                        cam_param],
+                )
+
+
     
     return LaunchDescription([
         robot_state_pub,
         cm,
         joint_state_broad,
         joint_traject,
+        cam_node
     ]
     )

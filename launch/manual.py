@@ -16,24 +16,10 @@ def generate_launch_description():
     
     share = FindPackageShare(package="tarm_hwi")
     
-    system = IncludeLaunchDescription(PathJoinSubstitution([share, "launch", "system.py"]))
-    
-    
-        
-    rqt_gui = Node(
-        package="rqt_joint_trajectory_controller",
-        executable="rqt_joint_trajectory_controller"
-    )
-    
-    rviz = Node(
-        package="rviz2",
-        executable="rviz2",
-        arguments=["-d", PathJoinSubstitution([share, "config", "config.rviz"])]
-    )
+    systemLaunch = IncludeLaunchDescription(PathJoinSubstitution([share, "launch", "system.py"]))
+    controllerLaunch = IncludeLaunchDescription(PathJoinSubstitution([share, "launch", "controller.py"]))
     
     return LaunchDescription([
-        system,
-        rqt_gui,
-        rviz
+        systemLaunch,
+        controllerLaunch
     ])
-    

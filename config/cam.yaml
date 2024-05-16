@@ -1,0 +1,44 @@
+/camera_driver:
+  ros__parameters:
+    camera_frame_id: camera_link
+    camera_info_url: 'package://tarm_hwi/config/config/camera_info.yaml'
+    image_size:
+    - 640
+    - 480
+    pixel_format: YUYV 
+    output_encoding: rgb8
+    image_raw:
+      enable_pub_plugins:
+      - image_transport/compressed
+      - image_transport/raw
+      format: jpeg
+      jpeg_quality: 95
+      png_level: 3
+      tiff:
+        res_unit: inch
+        xdpi: -1
+        ydpi: -1
+  
+
+    video_device: /dev/video0
+    # video_device: /dev/video1
+    # video_device: /dev/media0
+
+    auto_exposure: 3
+    backlight_compensation: 0
+    brightness: 0
+    contrast: 50
+    exposure_time_absolute: 312
+    gain: 64
+    gamma: 300
+    hue: 0
+
+
+
+
+    power_line_frequency: 1
+    saturation: 64
+    sharpness: 50
+    use_sim_time: false
+    white_balance_automatic: true
+    white_balance_temperature: 4600
